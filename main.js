@@ -32,3 +32,7 @@ function setDarkMode() {
     document.querySelector('.dark-mode').classList.add('active');
     document.querySelector('.light-mode').classList.remove('active');
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    setLightMode();
+});

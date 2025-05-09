@@ -1,3 +1,65 @@
 body {
     text-wrap: balance;
+} 
+
+/* Base style for both buttons */
+.light-mode,
+.dark-mode {
+  position: relative;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+  color: white;
+  background-color: #333;
+}
+
+/* Rainbow glow applied only to active button */
+.light-mode.active::before,
+.dark-mode.active::before {
+  content: '';
+  position: absolute;
+  top: -140%;
+  left: -50%;
+  width: 180%;
+  height: 400%;
+  background: conic-gradient(
+    red,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  z-index: -1;
+  animation: spin 6s linear infinite;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+.light-mode.active::after,
+.dark-mode.active::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: inherit;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

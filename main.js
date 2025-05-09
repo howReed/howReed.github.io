@@ -11,3 +11,13 @@ function removeItem() {
         document.getElementById('item-count').innerText = count;
     }
 }
+
+function setLightMode() {
+    document.body.style.backgroundColor = "rgb(255, 255, 255)";
+    document.body.style.color = "black";
+}
+
+function setDarkMode() {
+    document.body.style.backgroundColor = "rgb(40, 40, 40)";
+    document.body.style.color = "white";
+}
